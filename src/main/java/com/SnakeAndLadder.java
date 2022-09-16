@@ -14,8 +14,11 @@ public class SnakeAndLadder {
         System.out.println("\t Positions of Ladders are"+ laddersPositions);
         System.out.println("\t Let's play");
         laddersPositions.put(2,49);
+        SnakesAndLadddersParams snakesAndLadddersParams= new SnakesAndLadddersParams();
+        snakesAndLadddersParams.initializeGame();
         playGame();
     }
+
 
     public static void playGame(){
         Scanner scanner= new Scanner(System.in);
