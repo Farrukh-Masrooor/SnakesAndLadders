@@ -13,7 +13,7 @@ public class SnakesAndLadddersParams {
     public static final int botId=1;
 
     public static int[] board=new int[2];
-    public static final int diceMaxValue=15;
+    public static final int diceMaxValue=6;
 
     public void initializeGame(){
         snakesPositions.put(33,24);
