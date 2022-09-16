@@ -1,36 +1,19 @@
 package com;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
-import static com.SnakesAndLadddersParams.botId;
-import static com.SnakesAndLadddersParams.playerId;
+import static com.SnakesAndLadddersParams.*;
+import static com.util.SnakeAndLadderRules.*;
 
 public class SnakeAndLadder {
 
-    public static int[] board=new int[2];
-    private static Map<Integer,Integer> snakesPositions= new HashMap<>();
-    private static Map<Integer,Integer> laddersPositions= new HashMap<>();
-
-    static {
-        snakesPositions.put(33,24);
-        snakesPositions.put(72,55);
-        snakesPositions.put(85,22);
-        snakesPositions.put(91,70);
-
-        laddersPositions.put(9,32);
-        laddersPositions.put(31,80);
-        laddersPositions.put(65,75);
-        laddersPositions.put(76,99);
-    }
 
     public static void main(String args[]){
         System.out.println("\t Welcome to Snake and Ladders");
         System.out.println("\t Positions of Snakes are"+ snakesPositions);
         System.out.println("\t Positions of Ladders are"+ laddersPositions);
         System.out.println("\t Let's play");
-
+        laddersPositions.put(2,49);
         playGame();
     }
 
@@ -80,23 +63,5 @@ public class SnakeAndLadder {
         System.out.println(botTurn?"You won":"Bot won");
     }
 
-    public static boolean isWon(int playerId,int botId){
-        if(board[playerId]==100 || board[botId]==100){
-            return true;
-        }
-        return false;
-    }
 
-    public static boolean isBittenBySnake(int playerId){
-        if(snakesPositions.containsKey(board[playerId])){
-            return true;
-        }
-        return false;
-    }
-    public static boolean isOnLadder(int playerId){
-        if(laddersPositions.containsKey(board[playerId])){
-            return true;
-        }
-        return false;
-    }
 }
